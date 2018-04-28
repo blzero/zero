@@ -9,7 +9,7 @@
         </div>  
 
         <ul class="todo-list" v-if="toDoList" >
-            <transition-group name="list">
+            <transition-group name="list" tag="div">
                 <li v-for="(item,index) in toDoList" :key="index">
                    <div class="todo-content">
                     <p class="left-info">
@@ -114,7 +114,7 @@ export default {
             margin 10px 0;
             padding  0 inPddingLR;
             &:focus{
-                border-bottom 1px solid #799;
+                border-bottom 1px solid #f99;
             }
         }
 
@@ -126,11 +126,9 @@ export default {
         }
     }
     .text-content{
-              -wekit-scrollbar-base-color: #f00;
-
         textarea {
             width inWidth;
-            height 80px;
+            height 60px;
             resize none 
             padding  0 inPddingLR;
         }
@@ -148,12 +146,8 @@ export default {
             display flex;
             justify-content center;
             align-items center;
-            //    perspective:1000;
-                // perspective-origin: 10% 10%;
-                transform-origin 0 50%;
             &:hover{
-
-                // transform  rotateX(-5deg) rotateY(10deg)
+                transform  rotateX(5deg) translateZ(20px)
             }
             .todo-content{
                 flex 1;
@@ -189,6 +183,6 @@ export default {
         opacity: 0;
         transform: translateY(30px);
     }
-   
+ 
 </style>
 
