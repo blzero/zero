@@ -6,7 +6,7 @@ const ToDo = () => import('@/components/todos/index')
 
 Vue.use(Router)
 
-export default new Router({
+const  router = new Router({
   routes: [
     {
       path: '/',
@@ -17,6 +17,18 @@ export default new Router({
       path: '/todo',
       name:'ToDo',
       component:ToDo,
+      meta: {
+        title: 'todolist'
+      }
     }
   ]
 })
+
+router.beforeEach((to,from,next)=>{
+  if(to.meta.title){
+    document.title = to.meta.title;
+  }
+  next();
+})
+
+export default router;

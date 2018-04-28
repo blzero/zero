@@ -40,6 +40,9 @@ export default {
             text:''
         }
     },
+    created(){
+       
+    },
     filters:{
         time(value){
             var date = new Date(value);
