@@ -8,8 +8,7 @@
             <textarea name="" id="" v-model="text" placeholder="content" ></textarea>
         </div>  
 
-        <ul class="todo-list" v-if="toDoList" >
-            <transition-group name="list" tag="div">
+            <transition-group name="list" class="todo-list" v-if="toDoList"  tag="ul">
                 <li v-for="(item,index) in toDoList" :key="index">
                    <div class="todo-content">
                     <p class="left-info">
@@ -25,7 +24,6 @@
                     <img src="../../assets/del.png" @click="removeToDo(index)" alt="">
                 </li>
             </transition-group>
-        </ul>
        
     </div>
 </template>
@@ -81,6 +79,7 @@ export default {
             this.text = '';
         }
         ,
+       
         ...mapMutations({
             'addToDo':'addToDo',
             'removeToDo':'removeToDo',
@@ -139,7 +138,9 @@ export default {
 
     .todo-list{
         // padding 0 15px;
+        width 100%;
         li{
+            wdith 100%;
             padding 15px 0;
             border-radius 3px;
             margin-bottom 10px;
@@ -171,8 +172,8 @@ export default {
                 }
             }
             img{
-                height 25px;
-                width 25px;
+                height 15px;
+                width 15px;
                 margin 0 10px 
             }
         }
@@ -184,8 +185,8 @@ export default {
     .list-enter, .list-leave-to
     /* .list-leave-active for below version 2.1.8 */ {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateX(-50px) ;
     }
- 
+  
 </style>
 

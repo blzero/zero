@@ -79,6 +79,9 @@
           awesome-vue
         </a>
       </li>
+       <li>
+        <router-link to="/todo">todo</router-link>
+      </li>
     </ul>
   </div>
 </template>
