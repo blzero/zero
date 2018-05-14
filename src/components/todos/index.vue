@@ -10,18 +10,7 @@
 
             <transition-group name="list" class="todo-list" v-if="toDoList"  tag="ul">
                 <li v-for="(item,index) in toDoList" :key="index">
-                   <div class="todo-content">
-                    <p class="left-info">
-                        <span class="todo-name"> {{item.user}}</span>
-                        <span class="todo-c-time">{{item.create | time}}</span>
-                        :
-                    </p>
-                      
-                      <p class="right-text">
-                            {{item.text}}
-                      </p>
-                   </div>
-                    <img src="../../assets/del.png" @click="removeToDo(index)" alt="">
+                    <liItem :data='item' :index='index' @remove='removeToDo'></liItem>
                 </li>
             </transition-group>
        
@@ -30,6 +19,7 @@
 
 
 <script>
+import liItem from './listItem';
 import { mapGetters ,mapMutations} from 'vuex'
 export default {
     data:function(){
@@ -60,7 +50,9 @@ export default {
           'toDoList':'toDoList'
       })
     },
-
+    components:{
+        liItem
+    },
     methods:{
         addAction(){
             if(!this.text) return;
@@ -147,35 +139,11 @@ export default {
             background #fff;
             box-shadow 1px 2px 2px #777;
             transition all 0.3s;
-            display flex;
-            justify-content center;
-            align-items center;
+           
             &:hover{
                 transform  rotateX(5deg) translateZ(20px)
             }
-            .todo-content{
-                flex 1;
-                display flex;
-                .left-info{
-                    flex 0 0 auto;
-                    display flex;
-                    felx-direction column;
-                    padding 0 15px;
-                    color #666;
-                    .todo-name{
-                        padding 0 15px;
-                    }
-                }
-                .right-text{
-                    flex 1;
-                    text-align left 
-                }
-            }
-            img{
-                height 15px;
-                width 15px;
-                margin 0 10px 
-            }
+           
         }
     }
 

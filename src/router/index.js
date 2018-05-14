@@ -3,10 +3,12 @@ import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 
 const ToDo = () => import('@/components/todos/index')
+const audio = () => import('@/components/audio/audio')
 
 Vue.use(Router)
 
 const  router = new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
@@ -19,6 +21,14 @@ const  router = new Router({
       component:ToDo,
       meta: {
         title: 'todolist'
+      }
+    },
+    {
+      path: '/audio',
+      name:'audio',
+      component:audio,
+      meta: {
+        title: 'audio'
       }
     }
   ]
