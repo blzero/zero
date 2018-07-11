@@ -1,11 +1,11 @@
 <template>
    <div class="content">
         <div class="todo-content">
-        <p class="left-info">
-            <span class="todo-name"> {{data.user}}</span>
-            <span class="todo-c-time">{{data.create | time}}</span>
-            :
-        </p>
+            <p class="left-info">
+                <span class="todo-name"> {{data.user}}</span>
+                <span class="todo-c-time">{{data.create | time}}</span>
+                :
+            </p>
             
             <p class="right-text">
                 {{data.text}}

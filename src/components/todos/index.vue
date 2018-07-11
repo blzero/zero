@@ -93,7 +93,7 @@ export default {
     }
     @media (max-width:768px){
          .todo{
-            // padding 0 15px;
+            padding 0 15px;
         }
     }
 
