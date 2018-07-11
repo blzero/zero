@@ -8,7 +8,7 @@ const audio = () => import('@/components/audio/audio')
 Vue.use(Router)
 
 const  router = new Router({
-  mode: 'history',
+  // mode: 'history',
   routes: [
     {
       path: '/',
